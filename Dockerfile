@@ -5,7 +5,6 @@ RUN go build printer.go
 
 
 FROM alpine:3.16 as WRAPPER
-RUN apk --no-cache add ca-certificates
 WORKDIR /usr/src/app
 COPY --from=BUILDER /build/printer ./
 CMD ["./printer"]
